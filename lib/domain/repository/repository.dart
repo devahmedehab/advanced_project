@@ -4,5 +4,5 @@ import 'package:dartz/dartz.dart';
 import 'package:app1/data/network/requests.dart';
 
 abstract class Repository{
-  Either<Failure, Authentication> login(LoginRequests loginRequests);
+ Future <Either<Failure, Authentication>> login(LoginRequests loginRequests);
 }
