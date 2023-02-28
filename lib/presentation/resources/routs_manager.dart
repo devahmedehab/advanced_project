@@ -1,5 +1,5 @@
 import 'package:app1/presentation/forgetPassword/forget_password_view.dart';
-import 'package:app1/presentation/login/login.dart';
+import 'package:app1/presentation/login/view/login_view.dart';
 import 'package:app1/presentation/main/main_view.dart';
 import 'package:app1/presentation/onBoarding/view/onboarding_view.dart';
 import 'package:app1/presentation/register/register_view.dart';

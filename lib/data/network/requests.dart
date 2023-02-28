@@ -1,5 +1,4 @@
 
-
 class LoginRequests{
   String email;
   String password;
