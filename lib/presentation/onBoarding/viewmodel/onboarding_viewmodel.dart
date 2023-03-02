@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:app1/domain/models.dart';
 import 'package:app1/presentation/base/baseviewmodel.dart';
 import 'package:app1/presentation/resources/assets_manager.dart';

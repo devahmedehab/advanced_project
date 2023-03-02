@@ -7,13 +7,15 @@ import 'package:flutter/material.dart';
 
 ThemeData getApplicationTheme() {
   return ThemeData(
-    // main colors
 
+    // main colors
     primaryColor: ColorManager.primary,
     primaryColorLight: ColorManager.lightPrimary,
     primaryColorDark: ColorManager.darkPrimary,
     disabledColor: ColorManager.grey1,
     splashColor: ColorManager.lightPrimary,
+
+
     //ripple effect color
 
     //cardView theme
@@ -36,9 +38,14 @@ ThemeData getApplicationTheme() {
     //button theme
     buttonTheme: ButtonThemeData(
       shape: const StadiumBorder(),
-      disabledColor: ColorManager.grey1,
+      disabledColor: ColorManager.lightGrey,
       buttonColor: ColorManager.primary,
       splashColor: ColorManager.lightPrimary,
+    ),
+    textButtonTheme:   TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all(ColorManager.primary)
+      )
     ),
 
     //elevated button theme
@@ -50,7 +57,7 @@ ThemeData getApplicationTheme() {
         ),
         primary: ColorManager.primary,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(AppSize.s12),
+          borderRadius: BorderRadius.circular(AppSize.s20),
         ),
       ),
     ),
@@ -83,7 +90,8 @@ ThemeData getApplicationTheme() {
 
     //input Decoration Theme(text form field)
     inputDecorationTheme: InputDecorationTheme(
-
+      prefixIconColor: ColorManager.lightGrey,
+      
       //contentPadding
       contentPadding: const EdgeInsets.all(AppPadding.p8),
 
@@ -98,27 +106,28 @@ ThemeData getApplicationTheme() {
 
       //enabled border style
       enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: ColorManager.primary,width: AppSize.s1_5),
-            borderRadius: const BorderRadius.all( Radius.circular(AppSize.s8))
+        borderSide: BorderSide(color: ColorManager.lightGrey,width: AppSize.s1_5),
+            borderRadius: const BorderRadius.all( Radius.circular(AppSize.s20))
 
       ),
 
       //focused border style
       focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorManager.grey,width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s8),)
+          borderSide: BorderSide(color: ColorManager.primary,width: AppSize.s1_5),
+          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s20),)
       ),
+
 
       //error border style
       errorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.error,width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s8),)
+          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s20),)
       ),
 
       //focused Error border style
       focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(color: ColorManager.primary,width: AppSize.s1_5),
-          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s8),)
+          borderRadius: const BorderRadius.all( Radius.circular(AppSize.s20),)
       ),
     ),
   );
