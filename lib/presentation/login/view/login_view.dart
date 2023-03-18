@@ -1,7 +1,9 @@
+import 'package:app1/app/d_i.dart';
 import 'package:app1/presentation/login/viewmodel/login_view_model.dart';
 import 'package:app1/presentation/resources/assets_manager.dart';
 import 'package:app1/presentation/resources/color_manager.dart';
 import 'package:app1/presentation/resources/component.dart';
+import 'package:app1/presentation/resources/font_manager.dart';
 import 'package:app1/presentation/resources/routs_manager.dart';
 import 'package:app1/presentation/resources/strings_manager.dart';
 import 'package:app1/presentation/resources/values_manager.dart';
@@ -16,7 +18,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
-  final LoginViewModel _viewModel = LoginViewModel();
+  final LoginViewModel _viewModel = instance<LoginViewModel>();
   final TextEditingController _userNameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
@@ -76,7 +78,8 @@ class _LoginViewState extends State<LoginView> {
                     stream: _viewModel.outIsUserNameValid,
                     builder: (context, snapshot) {
                       return TextFormField(
-                        autofillHints: const [AutofillHints.email],
+                          cursorColor: ColorManager.primary,
+                          autofillHints: const [AutofillHints.email],
                           controller: _userNameController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
@@ -96,6 +99,7 @@ class _LoginViewState extends State<LoginView> {
                   height: mediaQueryHeight(context)*.04,
                 ),
                 Padding(
+
                   padding: EdgeInsets.only(
                     left: mediaQueryHeight(context)*0.03,
                     right: mediaQueryHeight(context)*0.03,
@@ -104,6 +108,7 @@ class _LoginViewState extends State<LoginView> {
                     stream: _viewModel.outIsPasswordValid,
                     builder: (context, snapshot) {
                       return TextFormField(
+                          cursorColor: ColorManager.primary,
                           obscureText: passwordVisible,
                           controller: _passwordController,
                           keyboardType: TextInputType.visiblePassword,
@@ -181,22 +186,35 @@ class _LoginViewState extends State<LoginView> {
                         children: [
                           TextButton(
                               onPressed:(){
-                                navigateAndFinish(context, Routes.forgetPasswordRoute);
+                                Navigator.pushNamed(
+                                    context, Routes.forgetPasswordRoute);
                               } ,
-                              child: const Text(AppStrings.forgetPassword)
+                              child: const Text(AppStrings.forgetPassword,
+                                style: TextStyle(
+
+                                    fontSize: FontSize.s14
+                                ),
+                              )
                           ),
                           const Spacer(),
                            Text(
                              AppStrings.doNotHaveAccount,
                           style: TextStyle(
-                            color: ColorManager.grey
+                            color: ColorManager.grey,
+                            fontSize: FontSize.s12
                           ),
                           ),
                           TextButton(
                               onPressed:(){
-                                navigateAndFinish(context, Routes.registerRoute);
+                                Navigator.pushNamed(
+                                    context, Routes.registerRoute);
                               } ,
-                              child: const Text(AppStrings.signUp)
+                              child: const Text(AppStrings.signUp,
+                                style: TextStyle(
+
+                                    fontSize: FontSize.s14
+                                ),
+                              )
                           ),
 
                         ],

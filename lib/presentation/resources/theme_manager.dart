@@ -37,10 +37,13 @@ ThemeData getApplicationTheme() {
 
     //button theme
     buttonTheme: ButtonThemeData(
-      shape: const StadiumBorder(),
+
+
+      shape:  RoundedRectangleBorder(borderRadius: BorderRadius.circular(AppSize.s20)),
       disabledColor: ColorManager.lightGrey,
       buttonColor: ColorManager.primary,
       splashColor: ColorManager.lightPrimary,
+
     ),
     textButtonTheme:   TextButtonThemeData(
       style: ButtonStyle(
